@@ -1,0 +1,67 @@
+GET http://localhost:8080/api/accounts/1234567
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/accounts/balance/1234567
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/accounts/add/1234567
+Content-Type: application/json
+
+{
+  "type": "SAVINGS_ACCOUNT",
+  "accountNumber": "12121212",
+  "actualBalance": "2000",
+  "bankName": "Sparkasse",
+  "maxWithdrawalAmount": "1000",
+  "interestRate": "5"
+}
+
+###
+
+GET http://localhost:8080/api/customers/1234567
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/transactions/operation/1234567
+Content-Type: application/json
+
+{
+  "sourceAccountNumber": "1234567",
+  "targetAccountNumber": null,
+  "amount": "200",
+  "type": "WITHDRAWAL"
+}
+
+
+###
+
+POST http://localhost:8080/api/transactions/operation/1234567
+Content-Type: application/json
+
+{
+  "sourceAccountNumber": "1234567",
+  "targetAccountNumber": "89567546",
+  "amount": "50",
+  "type": "TRANSFER"
+}
+
+###
+
+POST http://localhost:8080/api/customers/add
+Content-Type: application/json
+
+{
+  "identificationNumber": "111012",
+  "name": "Akhmedov Shaxzod",
+  "phone": "015734712120",
+  "email": "shaxzod.axmedov@gmail.com",
+  "address": "Bukhara",
+  "registrationDate": "2022-05-16"
+}
+
+###
